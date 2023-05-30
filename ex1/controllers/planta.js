@@ -14,6 +14,7 @@ module.exports.listPlantas = (filter, projection) => {
 module.exports.listFreguesias = () => {
     return Planta
             .distinct('Freguesia')
+            .sort()
             .then(resposta => {
                 return resposta
             })
@@ -25,6 +26,7 @@ module.exports.listFreguesias = () => {
 module.exports.listEspecies = () => {
     return Planta
             .distinct('Espécie')
+            .sort()
             .then(resposta => {
                 return resposta
             })
