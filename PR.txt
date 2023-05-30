@@ -14,6 +14,7 @@ db.plantas.find({Freguesia: "São Domingos de Rana"}).count()
 
 // Qual a lista de freguesias (ordenada alfabeticamente e sem repetições)?
 db.plantas.distinct('Freguesia')
+É possível remover a string vazia com um filter (.filter(p => p!== ''))
 
 // Qual a distribuição dos registos por freguesia (quantos registos em cada freguesia)
 db.plantas.aggregate([{$group: {_id: '$Freguesia', count: {$sum:1} }}])
@@ -23,4 +24,4 @@ db.plantas.aggregate([{$group: {_id: '$Espécie', count: {$sum:1} }}, {$sort: {c
 
 // Como executar os programas
 
-Para executar os programas, basta entrar dentro da pasta respetiva (ex1 ou ex2) e executar o comando npm start
+Para executar os programas, basta entrar dentro da pasta respetiva (ex1 ou ex2) e executar o comando npm start depois de instalar as dependências com npm i
